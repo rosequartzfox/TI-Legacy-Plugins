@@ -1,5 +1,5 @@
 # TI: Legacy MUSHclient Plugins
-Plugins for The Inquisition: Legacy RP MUD.
+Plugins for The Inquisition: Legacy RP MUD: https://ti-legacy.com/
 
 ## What the Plugins Do
 ### Too Far Away
