@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+
+<muclient>
+<plugin
+   name="Too_Far_Away"
+   author=" Galaban, adapted for TI by Niamh"
+   id="1559876f89e24dbf07374dc1"
+   language="Lua"
+   purpose="automatically approach if needed"
+   save_state="y"
+   date_written="2016-03-04 07:20:36"
+   requires="4.60"
+   version="1.0"
+   >
+
+</plugin>
+
+
+<!--  Triggers  -->
+
+<triggers>
+
+  <!-- triggers for watching our status after we enter the "give" command -->
+  <trigger
+   group="giveChecks"
+   enabled="n"
+   match="* needs to be closer to *."
+   send_to="12"
+   sequence="100"
+   script="approachDone"
+  />
+
+  <trigger
+   group="giveChecks"
+   enabled="n"
+   match="You're too far away!"
+   send_to="12"
+   sequence="100"
+   script="needApproach"
+  />
+
+  <trigger
+   group="giveChecks"
+   enabled="n"
+   match="You give * to *."
+   send_to="12"
+   sequence="100"
+   script="gaveDone"
+  />
+  <trigger
+   group="giveChecks"
+   enabled="n"
+   match="Nothing found to give."
+   send_to="12"
+   sequence="100"
+   script="gaveDone"
+  />
+
+  <!-- always-on triggers for monitoring approaches -->
+  <trigger
+   enabled="y"
+   match="Approach whom?"
+   send_to="12"
+   sequence="100"
+   script="approachCancel"
+  />
+
+  <trigger
+   enabled="y"
+   match="Where is it * wants to go?"
+   send_to="12"
+   sequence="100"
+   script="approachCancel"
+  />
+
+  <trigger
+   enabled="y"
+   match="* has reached * target."
+   send_to="12"
+   sequence="100"
+   script="approachDone"
+  />
+
+  <trigger
+   enabled="y"
+   match="* comes to a stop."
+   send_to="12"
+   sequence="100"
+   script="approachCancel"
+  />
+
+  <trigger
+   enabled="y"
+   match="* moves toward *."
+   send_to="12"
+   sequence="100"
+   script="approachStart"
+  />
+  
+  <trigger
+   enabled="y"
+   match="* is already there!"
+   send_to="12"
+   sequence="100"
+   script="approachDone"
+  />
+
+</triggers>
+
+<!--  Aliases  -->
+
+<aliases>
+  <alias
+   match="^give (.+) (\S+)$"
+   enabled="y"
+   regexp="y"
+   expand_variables="y"
+   group="BOT"
+   send_to="12"
+   sequence="100"
+  >
+  <send>autoGive("%1", "%2")</send>
+  </alias>
+</aliases>
+
+<!--  Script  -->
+
+
+<script>
+<![CDATA[
+
+
+------------------------
+--  AutoGive
+--
+local closeto = ""
+local approaching = ""
+local approachCmd = ""
+local giveCmd = ""
+local tmpGive = nil
+
+function autoGive(object, person)
+
+    EnableTriggerGroup("giveChecks", true)
+    approachCmd = ""
+    giveCmd = ""
+    if (closeto == "" or string.find(closeto, person) == nil) then        
+        tmpGive = object .. " " ..person
+        Send("approach "..person)
+    else
+        approachCmd = person
+        giveCmd = object
+
+        Send("give "..object .. " " ..person)
+    end
+end
+
+function needApproach()
+    if (approachCmd == "") then return end
+    Send("approach "..approachCmd)
+
+    tmpGive = giveCmd .. " " ..approachCmd
+
+    approachCmd = ""
+    giveCmd = ""
+end
+
+function gaveDone()
+    EnableTriggerGroup("give", false)
+end
+
+function approachStart(rName, rLine, rWildcards)
+    approaching = string.lower(rWildcards[1])
+end
+
+function approachDone()
+
+    EnableTriggerGroup("give", false)
+
+    --stack them so that the string.find will find them
+    closeto = closeto.." " ..approaching
+
+    approaching = ""
+    approachCmd = ""
+    giveCmd = ""
+
+    if (tmpGive == nil) then
+        return
+    end
+
+    Send("give "..tmpGive)
+    tmpGive = nil
+end
+
+function approachCancel()
+    clearCommands()
+end
+
+function clearCommands()
+   closeto = ""
+    approaching = ""
+    approachCmd = ""
+    giveCmd = ""
+    tmpGive = nil
+    EnableTriggerGroup("giveChecks",false)
+end
+
+function string.starts(String,Start)
+   return string.sub(String,1,string.len(Start))==Start
+end
+
+function OnPluginBroadcast (msg, id, name, text)
+   if (id == 'b3aae34498d5bf19b5b2e2af') then
+      if (text == "reload") then
+            clearCommands()
+      end
+      if (string.starts(text,"ROOMVNUM")) then
+            clearCommands()
+        end
+      return
+  end
+end
+
+
+Note("[Pixie's 'You're Too Far Away!' script loaded.]")
+
+]]>
+</script>
+
+
+</muclient>
