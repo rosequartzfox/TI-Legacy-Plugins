@@ -1,7 +1,7 @@
 # TI: Legacy MUSHclient Plugins
 Plugins for The Inquisition: Legacy RP MUD.
 
-## Included
+## What the Plugins Do
 ### Too Far Away
 Adapted from Galaban's version to accommodate TI, this plugin will automatically move toward another player or NPC if you attempt to hand something to them and they're too far away to receive it.
 ### Emote Checker
