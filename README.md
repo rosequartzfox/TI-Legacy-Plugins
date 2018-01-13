@@ -14,3 +14,6 @@ Adapted from Fiendish's version to work with TI color codes, this plugin allows 
 ## Other Tools
 ### Polyducks' String Checker
 http://polyducks.co.uk/hosting/inquisition-tool/
+
+# Plugin Submissions
+If you have a plugin for TI:Legacy that you would like to contribute to the repository, please contact Niamh in-game!
