@@ -4,7 +4,7 @@
 <muclient>
 <plugin
    name="Too_Far_Away"
-   author=" Galaban, adapted for TI by Niamh"
+   author=" Galaban"
    id="1559876f89e24dbf07374dc1"
    language="Lua"
    purpose="automatically approach if needed"

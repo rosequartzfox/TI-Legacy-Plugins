@@ -4,7 +4,7 @@
 <muclient>
 <plugin
    name="Copy_Colour_Output"
-   author="Nick Gammon, adapted for TI by Niamh"
+   author="Nick Gammon"
    id="04d9e64f835452b045b427a7"
    language="Lua"
    purpose="Copies output with colour codes"
