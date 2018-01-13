@@ -1,4 +1,4 @@
-# TI-Legacy-Plugins
+# TI: Legacy MUSHclient Plugins
 Plugins for The Inquisition: Legacy RP MUD.
 
 # Included
