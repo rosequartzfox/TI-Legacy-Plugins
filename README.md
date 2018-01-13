@@ -1,6 +1,12 @@
 # TI: Legacy MUSHclient Plugins
 Plugins for The Inquisition: Legacy RP MUD: https://ti-legacy.com/
 
+## Installation
+* Download the zipped folder of plugins from Github. Inside you will find a series of .xml files. 
+* Go into Program FIles -> MUSHclient -> worlds -> plugins
+* Place the .xml files into that folder.
+* Open up TI in MUSHclient. Go up to File -> Plugins. Click add, locate the plugin and open. Your new plugins should now be listed there. Highlight it and install/enable.
+
 ## What the Plugins Do
 ### Too Far Away
 Adapted from Galaban's version to accommodate TI, this plugin will automatically move toward another player or NPC if you attempt to hand something to them and they're too far away to receive it.
