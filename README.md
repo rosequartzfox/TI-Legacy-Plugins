@@ -17,7 +17,7 @@ Written by Niamh for TI. When there is a second player in the room with you you 
 ### Color Copy
 Adapted from Fiendish's version to work with TI color codes, this plugin allows you to highlight any text in your MUSHclient window, then ctrl+left click to copy it to your clipboard with color codes intact. Especially handy for crafters or book-binders.
 ### Mapper
-Graciously written by Nick Gammon for TI. The Mapper draws a real-time graphical map of Lithmore as you walk around it, with customizable colors, font, room marking, and room searching. In order for it to work with some of TI's unique quirks, you will have to set your prompt to match what the plugin expects it to be. You can do that by copying and pasting this into your MUD window: 
+Graciously written by Nick Gammon for TI. The Mapper draws a real-time graphical map of Lithmore as you walk around it, with customizable colors, font, and room searching. In order for it to work with some of TI's unique quirks, you will have to set your prompt to match what the plugin expects it to be. You can do that by copying and pasting this into your MUD window: 
 >prompt {c{[RPXP Gain: %X] {[HP:%h MV:%v P:%p] %f %o{x (vnum %R) %c
 
 Note that you may need to double back the first time around to cement the exit links, but that once they have been drawn they become permanent.
