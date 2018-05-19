@@ -1,0 +1,16 @@
+0 = #666666 -- black
+1 = #990000 -- red
+2 = #00A600 -- green
+3 = #D9A000 -- yellow
+4 = #00006F -- blue
+5 = #B200B2 -- magenta
+6 = #00A6B2 -- cyan
+7 = #BFBFBF -- white
+8 = #666666 -- grey
+9 = #E50000 -- bright red
+10 = #00D900 -- bright green
+11 = #E5E500 -- bright yellow
+12 = #0000FF -- bright blue
+13 = #E500E5 -- bright magenta
+14 = #00E5E5 -- bright cyan
+15 = #E5E5E5 -- bright white
