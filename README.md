@@ -9,7 +9,7 @@ Plugins for The Inquisition: Legacy RP MUD: https://ti-legacy.com/
 
 ## What the Plugins Do
 ### Gardener's Companion
-A simple plugin that colorizes plant statuses for easier gardening.
+A simple plugin that colorizes plant statuses for easier gardening. Comes with the **plantcheck** command, which displays all plants in the room at once.
 ### Too Far Away
 Adapted from Galaban's version to accommodate TI, this plugin will automatically move toward another player or NPC if you attempt to hand something to them and they're too far away to receive it.
 ### Color Copy
