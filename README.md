@@ -8,6 +8,8 @@ Plugins for The Inquisition: Legacy RP MUD: https://ti-legacy.com/
 * Open up TI in MUSHclient. Go up to File -> Plugins. Click add, locate the plugin and open. Your new plugins should now be listed there. Highlight the ones you want and install/enable.
 
 ## What the Plugins Do
+### Gardener's Companion
+A simple plugin that colorizes plant statuses for easier gardening.
 ### Too Far Away
 Adapted from Galaban's version to accommodate TI, this plugin will automatically move toward another player or NPC if you attempt to hand something to them and they're too far away to receive it.
 ### Color Copy
