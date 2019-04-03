@@ -24,6 +24,18 @@
 
 <include name="constants.lua"/>
 
+<!--  Aliases  -->
+
+<aliases>
+  <alias
+   match="plantcheck"
+   enabled="y"
+   sequence="100"
+  >
+  <send>l all.plant</send>
+  </alias>
+</aliases>
+
 <!--  Triggers  -->
 
 <triggers>
